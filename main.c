@@ -265,7 +265,8 @@ int main(int argc, char **argv) {
     feedforward(&nn);
     float out0 = inv_zscore(nn.output[0], out_stats[0].mean, out_stats[0].std);
     float out1 = inv_zscore(nn.output[1], out_stats[1].mean, out_stats[1].std);
-    printf("Sensacao: %.2fC, Probabilidade de Chuva: %.2f%%\n", out0, out1);
+    printf("\n ---------------Saída------------------\n");
+    printf("Sensacao: %.2fC, Probabilidade de Chuva: %.2f%%\n\n", out0, out1);
 
 
     return 0;
