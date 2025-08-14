@@ -9,8 +9,8 @@ Este projeto implementa uma rede neural feedforward em C puro para previsão de 
 - **Sistema**: Linux/Unix, Windows (com MinGW), macOS
 - 
   ### Preparação do ambiente e instalações necessárias
-## É necessário ter o python instalado e adicionado ao path do sistema
-## Também é necessário ter a biblioteca matplotlib instalada, ela é facilmente instalado com o comando ##abaixo
+- É necessário ter o python instalado e adicionado ao path do sistema
+- Também é necessário ter a biblioteca matplotlib instalada, ela é facilmente instalado com o comando abaixo
 ```bash
 pip install matplotlib
 ```
@@ -40,6 +40,26 @@ python run_and_plot.py
 ./central_comando --load-model
 ```
 ```
+
+## 💡 Exemplo de Uso
+
+Após o treinamento e execução do programa central_comando, o programa solicitará entrada interativa:
+
+```
+Temperatura: 25.5
+Umidade: 65
+Vento: 12
+Hora: 14
+Dia: 180
+Nuvens: 40
+Pressao: 1013
+Precipitacao: 0
+```
+
+A saída vai se parecer com:
+```
+Sensacao: 24.80C, Probabilidade de Chuva: 25.30%
+```
 ### Variáveis de Entrada
 1. **Temperatura** (°C)
 2. **Umidade** (%)
@@ -53,7 +73,6 @@ python run_and_plot.py
 ### Variáveis de Saída
 1. **Sensação térmica** (°C)
 2. **Probabilidade de chuva** (%)
-
 
 **Importante**: Certifique-se de que o arquivo `train.csv` está no mesmo diretório do executável.
 
@@ -77,25 +96,7 @@ O arquivo `train.csv` deve conter os dados no seguinte formato:
    - Monitora a perda (MSE) por época
 4. **Interação**: Permite previsões interativas após o treinamento
 
-## 💡 Exemplo de Uso
 
-Após o treinamento, o programa solicitará entrada interativa:
-
-```
-Temperatura: 25.5
-Umidade: 65
-Vento: 12
-Hora: 14
-Dia: 180
-Nuvens: 40
-Pressao: 1013
-Precipitacao: 0
-```
-
-A saída vai se parecer como:
-```
-Sensacao: 24.80C, Probabilidade de Chuva: 25.30%
-```
 
 ## 🔧 Funcionalidades Técnicas
 
