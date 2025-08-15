@@ -1,3 +1,27 @@
+# -*- coding: utf-8 -*-
+"""
+@file run_and_plot.py
+@author Gerson Menezes, Eduardo Timm
+@brief Script Python para orquestrar e visualizar o treinamento da Rede Neural em C.
+@version 1.0
+@date 2025-08-14
+
+@copyright Copyright (c) 2025
+
+@details
+Este script atua como o "centro de comando" para a aplicação. Ele é responsável
+por gerenciar o ciclo de vida do programa em C e fornecer uma visualização
+em tempo real do processo de treinamento. Suas tarefas incluem:
+- Verificar se o executável C ('central_comando') existe e compilá-lo se necessário.
+- Iniciar o programa C como um subprocesso, passando a flag '--no-interactive'.
+- Capturar a saída padrão (stdout) do subprocesso C em uma thread separada para
+  não bloquear a interface gráfica.
+- Interpretar (parse) as mensagens de progresso ('LOSS:epoca,mse') enviadas pelo C.
+- Utilizar Matplotlib para plotar um gráfico animado da perda (MSE) por época.
+- Gerenciar o encerramento seguro do subprocesso C quando o gráfico é fechado.
+A comunicação é feita via pipes de stdout, uma forma de Comunicação entre Processos (IPC).
+"""
+
 # run_and_plot.py
 import os
 import sys

@@ -1,3 +1,24 @@
+/**
+ * @file main.c
+ * @author Gerson Menezes, Eduardo Timm
+ * @brief Implementação de uma Rede Neural em C para previsão meteorológica.
+ * @version 1.0
+ * @date 2025-08-14
+ *
+ * @copyright Copyright (c) 2025
+ *
+ * @details
+ * Este arquivo contém a lógica principal da aplicação, escrita em C para otimizar
+ * o desempenho computacional. As responsabilidades deste módulo incluem:
+ * - Definir a arquitetura e as funções da rede neural (feedforward, backpropagation).
+ * - Carregar o conjunto de dados de treinamento ('train.csv').
+ * - Executar o processo de treinamento e calcular a perda (MSE).
+ * - Salvar o modelo treinado em 'model.bin' e carregá-lo para previsões.
+ * - Comunicar o progresso do treinamento para um processo externo (Python)
+ * imprimindo o status (época e MSE) na saída padrão (stdout).
+ * - Oferecer um modo interativo para previsões via linha de comando.
+ */
+
 // main.c  (salva/carrega pesos em model.bin; modo --load-model para testar)
 #include <stdio.h>
 #include <stdlib.h>
@@ -265,7 +286,7 @@ int main(int argc, char **argv) {
     feedforward(&nn);
     float out0 = inv_zscore(nn.output[0], out_stats[0].mean, out_stats[0].std);
     float out1 = inv_zscore(nn.output[1], out_stats[1].mean, out_stats[1].std);
-    printf("\n ---------------Saída------------------\n");
+    printf("\n ---------------Saida------------------\n");
     printf("Sensacao: %.2fC, Probabilidade de Chuva: %.2f%%\n\n", out0, out1);
 
 
